@@ -19,7 +19,7 @@ const signup = (req, res) => {
 
   db.User.create(req.body, (error, createdUser) => {
     if(error) {
-      res.statue(400).json({ error: error.message })
+      res.status(400).json({ error: error.message })
     } else {
       console.log('👽 signup successful! 👽')
       res.status(201).json(createdUser)
@@ -55,6 +55,7 @@ const logout = (req, res) => {
   req.session.destroy(() => {
     res.status(200).json({ msg: '👻 user logged out 👻'})
   })
+  console.log('👻 user logged out 👻')
 }
 
 module.exports = {

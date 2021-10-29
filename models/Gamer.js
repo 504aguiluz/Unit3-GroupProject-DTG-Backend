@@ -19,7 +19,11 @@ const gamerSchema = new mongoose.Schema({
     faveGames: {
         type: [String],
         required: true,
-    }
+    },
+    username: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 })
 
 
